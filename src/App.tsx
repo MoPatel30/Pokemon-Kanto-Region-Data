@@ -51,7 +51,7 @@ function App() {
   return (
     <div>
 
-      <h1>Typescript/Go Project</h1>  
+      <h1>Pokemon Tracker</h1>  
 
       {
       randomData.map((name: any) => (

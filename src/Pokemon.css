@@ -1,0 +1,45 @@
+.card{
+    position: absolute;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    background-color: lightcyan;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 3rem;
+    margin: auto;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    position: absolute;
+    top: 60%;
+}
+
+.form input {
+    border: 2px solid grey;
+}
+.form button {
+    border: 2px solid grey;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+.header img{
+    margin-left: 10px;
+}

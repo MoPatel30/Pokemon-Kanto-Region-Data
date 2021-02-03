@@ -11,10 +11,10 @@ import (
 	"strings"
 )
 
-func grabData() string {
+func grabData(value string) string {
 
-	response, err := http.Get("http://pokeapi.co/api/v2/pokedex/kanto/")
-
+	response, err := http.Get("http://pokeapi.co/api/v2/pokemon/" + value)
+	// http://pokeapi.co/api/v2/pokedex/kanto/
 	if err != nil {
 		fmt.Print(err.Error())
 		os.Exit(1)
@@ -58,11 +58,17 @@ func grabPokemonData() string {
 func main() {
 
 	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		fmt.Fprint(res, grabData())
+
+		m := req.URL.RawQuery
+		fmt.Println(m)
+
+		value := strings.Split(m, "=")[1]
+
+		fmt.Fprint(res, grabData(value))
 	})
 
 	log.Fatal(http.ListenAndServe(":8002", nil))
-	grabData()
+	grabData("bulbasaur")
 
 	http.HandleFunc("/pokemon", func(res http.ResponseWriter, req *http.Request) {
 		fmt.Fprint(res, grabPokemonData())

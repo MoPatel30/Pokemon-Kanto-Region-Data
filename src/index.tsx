@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Pokemon from "./Pokemon"
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Pokemon />, document.getElementById('root'));
 
 
 
